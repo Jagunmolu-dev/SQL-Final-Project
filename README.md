@@ -1,11 +1,11 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(fill in your description and goals here)
+Transforming and Analyzing Data with SQL
 
 ## Process
-### (your step 1)
-### (your step 2)
+### Created the required database and imported the provided tables into ther database
+### Studied the dataset and cleaned the data containing NULL values, or inconsistent datatypes and also deleted redundant columns not needed for analysis
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
