@@ -15,7 +15,7 @@ SELECT *
 FROM sales_report
 WHERE sentimentmagnitude IS NULL
 
-###Updated Null values for numeric fields with 0 and non numeric columns as 'NA'
+### Updated Null values for numeric fields with 0 and non numeric columns as 'NA'
 
 UPDATE all_sessions 
 SET timeonsite = COALESCE(timeonsite, '0')
