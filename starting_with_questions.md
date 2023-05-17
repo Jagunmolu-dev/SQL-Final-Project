@@ -5,12 +5,25 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 
 SQL Queries:
+SELECT city, country, transaction_revenue_in_millions
+FROM all_sessions
+HAVING transaction_revenue_in_millions = (
+    SELECT MAX(transaction_revenue_in_millions)
+    FROM all_sessions
+);
 
 
+-- Alternative Solution
+SELECT MAX(transaction_revenue_in_millions)
+    FROM all_sessions
+
+SELECT city, country, transaction_revenue_in_millions
+FROM all_sessions
+WHERE transaction_revenue_in_millions = 1005.5
 
 Answer:
 
-
+"United States"	"United States"	1005.5 Million
 
 
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
