@@ -11,7 +11,9 @@ Transforming and Analyzing Data with SQL
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
 
 ## Challenges 
-(discuss challenges you faced in the project)
+1. Deciding on whether to replace null values in numeric fields with 0 or any of the measure of central tendency but i decided to replace with zero because the available values account for less 40% of the data so it would not make sense to use the mean or median.
+2. Dealing with Duplicates
+3. Inconsistent naming conventions
 
 ## Future Goals
-(what would you do if you had more time?)
+DIve more into the data to perform more ststistical analysis on the data
