@@ -29,13 +29,17 @@ Answer:
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
 
 
-SQL Queries:
-
-
+SELECT  a.country, a.city, AVG(p.orderedquantity)
+FROM all_sessions AS a
+JOIN products AS p 
+ON a.productsku = p.sku
+WHERE 
+    city <> '(not set)'
+GROUP BY country, city
+LIMIT 10;
 
 Answer:
-
-
+![image](https://github.com/Jagunmolu-dev/SQL-Final-Project/assets/67484584/e6819350-8e91-4ab3-a9f2-054848d32904)
 
 
 
@@ -44,7 +48,9 @@ Answer:
 
 SQL Queries:
 
-
+SELECT  country, city, v2productname, v2productcategory
+FROM all_sessions 
+GROUP BY v2productcategory, country, city, v2productname
 
 Answer:
 
