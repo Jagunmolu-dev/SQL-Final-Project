@@ -11,7 +11,7 @@ Transforming and Analyzing Data with SQL
 
 ## Results
 ![schema](https://github.com/Jagunmolu-dev/SQL-Final-Project/assets/67484584/332c6b0a-a616-4e28-8d82-21646709f310)
-### From sytudhying the dataset i had to find the connection between the tables provided, noting differnt names for the same column in different tables. Thereby using them as either primary keys or foreign keys for the different tables. The understanding of this connection helps to join tables as seen in the ERD diagram above
+### From studhying the dataset i had to find the connection between the tables provided, noting differnt names for the same column in different tables. Thereby using them as either primary keys or foreign keys for the different tables. The understanding of this connection helps to join tables as seen in the ERD diagram above
 
 ## Challenges 
 1. Deciding on whether to replace null values in numeric fields with 0 or any of the measure of central tendency but i decided to replace with zero because the available values account for less 40% of the data so it would not make sense to use the mean or median.
