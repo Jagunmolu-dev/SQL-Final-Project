@@ -8,6 +8,7 @@ Replace NULL values of numeric columns with 0 and non Numeric columns with 'NA'
 Queries:
 Below, provide the SQL queries you used to clean your data.
 -- Delete duplicates from the analytics and all_session table
+```
 DELETE FROM analytics
 WHERE visitid IN (
     SELECT visitid
@@ -15,7 +16,7 @@ WHERE visitid IN (
     GROUP BY visitid
     HAVING COUNT(*) > 1
 );
-
+```
 DELETE FROM all_sessions_cleaned
 WHERE fullvisitorid IN (
     SELECT fullvisitorid
