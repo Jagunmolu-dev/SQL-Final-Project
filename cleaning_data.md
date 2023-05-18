@@ -18,60 +18,77 @@ WHERE visitid IN (
 );
 ```
 DELETE FROM all_sessions_cleaned
+```
 WHERE fullvisitorid IN (
     SELECT fullvisitorid
     FROM all_sessions_cleaned
     GROUP BY fullvisitorid
     HAVING COUNT(*) > 1
 );
-
+```
 
 -- To replace the 'not available in demo dataset' and '(not set)' in the city column by the values in the country field
 UPDATE all_sessions_cleaned
+```
 SET city = CASE
     WHEN city = 'not available in demo dataset' OR city = '(not set)'
         THEN country
     ELSE city
     END;
-
+```
+```
 -- Update the null values of numeric fields wit 0 
 UPDATE all_sessions 
 SET timeonsite = COALESCE(timeonsite, '0')
-
+```
+```
 UPDATE analytics
 SET timeonsite = COALESCE(timeonsite, '0')
-
+```
+```
 UPDATE products
 SET sentimentmagnitude = COALESCE(sentimentmagnitude, '0')
+```
+
 
 -- Converting datatype
+```
 ALTER TABLE all_sessions
 ALTER COLUMN totaltransactionrevenue TYPE double precision
 USING totaltransactionrevenue::double precision;
-
+```
+```
 ALTER TABLE analytics_cleaned
 ALTER COLUMN visitstarttime TYPE time
 USING TIME '00:00:00' + visitstarttime * INTERVAL '1 second';
-
+```
+```
 ALTER TABLE all_sessions
 ALTER COLUMN productrevenue TYPE double precision
 USING productrevenue::double precision;
+```
 
 -- Deleting columns
+```
 ALTER TABLE all_sessions
 DROP COLUMN searchkeyword
+```
 
 -- Update the transactionrevenue column to cast it as divided by 1000000
+```
 UPDATE all_sessions 
 SET transactionrevenue =  CAST (transactionrevenue/1000000 AS DECIMAL (10,3)) 
-
+```
+```
 ALTER TABLE all_sessions 
 RENAME COLUMN transactionrevenue TO transaction_revenue_in_millions;
+```
 
-
-
+```
 UPDATE all_sessions
 SET transactionrevenue =  COALESCE (transactionrevenue, '0') 
-
+```
+```
 UPDATE all_sessions
 SET ecommerceaction_option =  COALESCE (ecommerceaction_option, 'NA') 
+```
